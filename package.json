@@ -1,0 +1,28 @@
+{
+  "name": "gulp-rev-manifest-replace",
+  "version": "0.0.1",
+  "description": "Plugin to replace assets urls based on generated manifest file",
+  "main": "replace.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "rev"
+  ],
+  "author": "jiyinyiyong",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "through2": "^0.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mvc-works/gulp-rev-manifest-replace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mvc-works/gulp-rev-manifest-replace/issues"
+  },
+  "homepage": "https://github.com/mvc-works/gulp-rev-manifest-replace"
+}
