@@ -17,6 +17,10 @@ module.exports = (options) ->
     contents = String outfile.contents
     for fullpath, wanted of options.manifest
       short = path.relative options.base, fullpath
+      if options.path?
+        short = path.join options.path, short
+      if options.cdnPrefix?
+        wanted = path.join options.cdnPrefix, wanted
       parts = contents.split short
       if parts.length > 1
         logPath = path.relative options.base, file.path
