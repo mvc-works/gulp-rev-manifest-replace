@@ -2,6 +2,7 @@
 through = require 'through2'
 gutil = require 'gulp-util'
 path = require 'path'
+urljoin = require 'url-join'
 
 c = (str) ->
   "\x1B[34m#{str}\x1B[39m"
@@ -20,7 +21,7 @@ module.exports = (options) ->
       if options.path?
         short = path.join options.path, short
       if options.cdnPrefix?
-        wanted = path.join options.cdnPrefix, wanted
+        wanted = urljoin options.cdnPrefix, wanted
       parts = contents.split short
       if parts.length > 1
         logPath = path.relative options.base, file.path
