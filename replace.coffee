@@ -21,6 +21,8 @@ module.exports = (options) ->
         short = path.join options.path, short
       if options.cdnPrefix?
         wanted = path.join options.cdnPrefix, wanted
+      if path.sep is '\\'
+        short = short.replace /\\/g, '/'
       parts = contents.split short
       if parts.length > 1
         logPath = path.relative options.base, file.path
