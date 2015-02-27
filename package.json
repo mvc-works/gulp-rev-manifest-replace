@@ -1,6 +1,6 @@
 {
   "name": "gulp-rev-manifest-replace",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Plugin to replace assets urls based on generated manifest file",
   "main": "replace.js",
   "scripts": {

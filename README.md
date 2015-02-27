@@ -2,6 +2,11 @@
 Gulp rev manifest replace
 ------
 
+> This plugin is no longer maintained. Use [Webpack][webpack] or [gulp-rev-all][rev-all] instead!
+
+[webpack]: https://github.com/petehunt/webpack-howto
+[rev-all]: https://github.com/smysnk/gulp-rev-all
+
 Plugin to replace assets urls based on generated manifest file.
 As it sounds like, it needs to be used after [`gulp-rev`][rev] created the `rev-manifest.json`.
 

@@ -7,6 +7,8 @@ urljoin = require 'url-join'
 c = (str) ->
   "\x1B[34m#{str}\x1B[39m"
 
+gutil.log gutil.colors.red('gulp-rev-manifest-replace is no longer maintained, use Webpack or gulp-rev-all instead')
+
 module.exports = (options) ->
   options = options or {}
   unless options.base?
