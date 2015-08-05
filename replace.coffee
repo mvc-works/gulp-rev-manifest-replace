@@ -15,10 +15,25 @@ module.exports = (options) ->
     throw new Error 'options.base has to be a string of an absolute path'
   unless options.manifest?
     throw new Error 'options.manifest is required'
+
+  sortFunc = (a, b) ->
+    if a.fullpath.length == b.fullpath.length
+      0
+    else if a.fullpath.length > b.fullpath.length
+      -1
+    else
+      1
+
   through.obj (file, enc, callback) ->
     outfile = file.clone()
     contents = String outfile.contents
+    paths = []
     for fullpath, wanted of options.manifest
+      paths.push { fullpath: fullpath, wanted: wanted }
+    paths = paths.sort sortFunc
+    for pathObj in paths
+      fullpath = pathObj.fullpath
+      wanted = pathObj.wanted
       short = path.relative options.base, fullpath
       if options.path?
         short = path.join options.path, short
