@@ -18,7 +18,13 @@ module.exports = (options) ->
   through.obj (file, enc, callback) ->
     outfile = file.clone()
     contents = String outfile.contents
+    paths = []
     for fullpath, wanted of options.manifest
+      paths.push { fullpath: fullpath, wanted: wanted }
+    paths.sort (a, b) -> b.fullpath.length - a.fullpath.length
+    for pathObj in paths
+      fullpath = pathObj.fullpath
+      wanted = pathObj.wanted
       short = path.relative options.base, fullpath
       if options.path?
         short = path.join options.path, short
